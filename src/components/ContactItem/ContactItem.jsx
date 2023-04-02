@@ -1,11 +1,11 @@
 import PropTypes from 'prop-types';
 import css from '../ContactItem/ContactItem.module.css';
 
-export const ContactItem = ({ data: { id, name, number }, onDelete }) => {
+export const ContactItem = ({ data: { id, name, phone }, onDelete }) => {
   return (
     <li key={id} className={css.list__li}>
       <p>
-        {name}: {number}
+        {name}: {phone}
         <button
           className={css.list__Btn}
           type="button"
@@ -22,7 +22,7 @@ ContactItem.propTypes = {
   data: PropTypes.shape({
     id: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
-    number: PropTypes.number.isRequired,
+    phone: PropTypes.string.isRequired,
   }).isRequired,
   onDelete: PropTypes.func.isRequired,
 };

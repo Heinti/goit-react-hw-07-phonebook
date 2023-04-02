@@ -4,7 +4,7 @@ import { ContactItem } from 'components/ContactItem/ContactItem';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import { getContacts, getFilterDataValue } from 'components/redux/selectors';
-import { deleteContact } from '../redux/contactSlice';
+import { deleteContact } from '../redux/operators';
 
 export const ContactList = () => {
 
@@ -30,10 +30,10 @@ export const ContactList = () => {
   return (
     <section>
       <ul>
-        {visibleContacts.map(({ id, name, number }) => (
+        {visibleContacts.map(({ id, name, phone }) => (
           <ContactItem
             key={id}
-            data={{ id, name, number }}
+            data={{ id, name, phone }}
             onDelete={deleteContactFormData}
           />
         ))}
